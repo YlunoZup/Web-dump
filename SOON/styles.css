@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('soon.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+.coming-soon-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darkened background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.coming-soon-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.coming-soon-container p {
+    font-size: 1.2rem;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#countdown span {
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+footer a {
+    color: #ffcc00; /* Gold for a modern look */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.preview-button {
+    position: absolute;
+    top: 20px; /* Adjust for the top margin */
+    right: 20px; /* Adjust for the right margin */
+    background-color: #00bfff; /* Light blue color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.preview-button:hover {
+    background-color: #009acd; /* Darker blue on hover */
+}
+@media (max-width: 460px) {
+    /* Adjust the container's padding and font sizes for small screens */
+    .coming-soon-container {
+        padding: 15px;
+        max-width: 85%; /* Ensure container fits better on mobile */
+    }
+
+    .coming-soon-container h1 {
+        font-size: 2rem; /* Smaller heading font for mobile */
+    }
+
+    .coming-soon-container p {
+        font-size: 1rem; /* Smaller text for better readability */
+    }
+
+    #countdown {
+        font-size: 1.2rem; /* Adjust countdown font for mobile */
+        flex-direction: column; /* Stack countdown items vertically */
+    }
+
+    #countdown span {
+        font-size: 1.5rem; /* Make countdown digits larger */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Reduce footer font size for mobile */
+    }
+}

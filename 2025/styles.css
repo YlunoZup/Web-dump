@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth;
+    overflow-y: scroll; /* Enable scrolling vertically */
+    scrollbar-width: none; /* For Firefox */
+    background-image: url('test.gif'); /* Global background GIF */
+    background-size: cover; /* Make the GIF cover the entire body */
+    background-position: center; /* Center the GIF */
+    background-attachment: fixed; /* Keep the background fixed during scrolling */
+    background-repeat: no-repeat; /* Prevent the GIF from repeating */
+    overflow-x: hidden; /* Ensure horizontal scrolling is disabled */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    flex: 1;
+    text-align: center;
+    margin: 0 20px 0 350px; /* Adjust the margin to move the logo to the middle */
+}
+
+.navbar .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    margin: 0px 300px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 5px; /* Adds a small margin between the links */
+}
+
+.navbar a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.navbar a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar a[href="#facebook"] {
+    background-color: #007bff; /* blue color */
+    color: #fff;
+}
+
+.navbar .sign-up {
+    background-color: #ffcc00;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* General section styling */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add dark overlay for section differentiation */
+.section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Ensure overlay is behind the content */
+}
+
+/* Section-specific darkness (more dark for each section) */
+#home:before {
+    background: rgba(0, 0, 0, 0.2); /* Lighter overlay for Home */
+}
+#about:before {
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay for About */
+}
+#services:before {
+    background: rgba(0, 0, 0, 0.6); /* Even darker overlay for Services */
+}
+#facebook:before {
+    background: rgba(0, 0, 0, 0.8); /* Darkest overlay for Facebook */
+}
+
+/* Section headings and paragraphs */
+.section h1, .section p {
+    position: relative;
+    z-index: 1; /* Ensure text appears above the background */
+    color: white; /* White text for better contrast */
+}
+
+/* Section color alternation */
+.section:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5); /* Light greyish overlay for even sections */
+}
+
+/* Section headings and paragraphs */
+.section h1 {
+    margin-bottom: 20px;
+}
+
+.section p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 460px) {
+    /* Logo should be on top and smaller */
+    .navbar .logo {
+        font-size: 10px; /* Smaller font size for the logo */
+        margin: 0;
+    }
+
+    /* Adjust navbar for small screens */
+    .navbar {
+        flex-direction: column;
+        padding: 5px 5px;
+        height: auto;
+    }
+
+    .navbar .nav-links {
+        width: 100%;
+        justify-content: space-evenly;
+        flex-direction: row; /* Nav links aligned next to each other */
+    }
+
+    .navbar a {
+        font-size: 10px; /* Smaller font size for links */
+        padding: 3px 10px;
+        margin: 2px; /* Reduce margin for better fitting */
+    }
+
+    .navbar .sign-up {
+        font-size: 10px; /* Reduce the font size of the sign-up button */
+        padding: 3px 10px;
+    }
+
+    /* Make sections and text smaller for mobile */
+    .section h1 {
+        font-size: 18px; /* Smaller heading size for mobile */
+    }
+
+    .section p {
+        font-size: 12px; /* Smaller text for readability */
+    }
+}
